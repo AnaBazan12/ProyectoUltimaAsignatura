@@ -69,6 +69,7 @@ h2{
     height: 600px;
     background-color: rgb(4, 105, 80);
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-items: center;
