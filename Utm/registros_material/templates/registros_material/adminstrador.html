@@ -1,0 +1,29 @@
+{% extends 'inicio/encabezado.html' %}
+{%block titulo%}administrado {%endblock%}
+
+{%block header%}
+   <header class="header_principal">
+    </header>
+{%endblock%}
+
+{%block main%}
+    <h2 class="Titulo_registro">Registrados</h2>
+    <div class="container_tabla">
+    <table class="tabla">
+        <tr>
+            <th>Matricula</th>
+            <th>Nombre</th>
+            <th>Carrera</th>
+            <th>Material</th>
+        </tr>
+        {% for material1 in mat %}
+        <tr>
+            <td>{{material1.matricula}} </td>
+            <td>{{material1.nombre_alumno}}</td>
+            <td>{{material1.carrera}} </td>
+            <td>{{material1.material}}</td>
+            <td> <a href="{%url 'edicion' material1.id%}" class="editar">Editar</a>
+            <td> <a class="eliminar" href="{%url 'Eliminar' material1.id%} ">Eliminar</a>
+        <tr>
+        {% endfor %}
+{%endblock%}

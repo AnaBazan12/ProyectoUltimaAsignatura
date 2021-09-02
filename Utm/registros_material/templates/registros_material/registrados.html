@@ -1,0 +1,38 @@
+{% extends 'inicio/encabezado.html' %}
+{%block titulo%}Registro alumnos{%endblock%}
+
+{%block header%}
+   <header class="header_principal">
+    </header>
+{%endblock%}
+
+{%block main%}
+<section class="seccion_form">
+    <h2>Formulario de solicitud de materiales</h2>
+    <form class="formulario" action="{% url 'registro'%}" method="POST" role="form" enctype="multipart/form-data">
+    {% csrf_token %}
+        <fieldset>
+         <legend>Llene todos los campos </legend>
+            <div class="contenedor_campo">
+                <div class="campo">
+                    <label>Matricula</label>
+                    <input class="inputs_texto" type="text" name="matricula" placeholder="Tu Matricula">
+                </div>
+                <div class="campo">
+                            <label for="">Nombre</label>
+                            <input class="inputs_text" type="text" name="nombre_alumno" placeholder="Nombre del solicitante">
+                        </div>
+
+                        <div class="campo">
+                            <label for="">Carrera</label>
+                            <input class="inputs_text" type="text" name="carrera" placeholder="Tu Carrera">
+                        </div>
+
+                        <div class="campo">
+                            <label for="">Materiales a solcitar</label>
+                            <textarea class="inputs_text" name="material" cols="30" rows="10"></textarea>
+                        </div>
+                     <button type="submit" onclick="alert('Registrado correctamente')" name"enviar" class="boton">Registrar</button>
+    </form>
+</section>
+{%endblock%}

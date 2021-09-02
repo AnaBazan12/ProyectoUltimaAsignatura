@@ -1,0 +1,22 @@
+{% extends 'inicio/encabezado.html' %}
+{%block titulo%}Eliminar{%endblock%}
+
+{%block header%}
+   <header class="header_principal">
+    </header>
+{%endblock%}
+
+{%block main%}
+<form method="POST">
+     {% csrf_token %}
+     <div class="contenedor">
+     <div class="Textos_eliminar">
+        <h2>Eliminar registro</h2>
+        <p> ¿Estas seguro de que deseas <strong> Eliminar </strong> el registro </p>
+    </div>
+    <div class="btn_contenedor">
+    <button type="submit" class="boton_si">Si</button>
+    <a href="{% url 'inicio' %}"  class="btn_cancelar"> cancelar </a>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'inicio/encabezado.html' %}
+{%block titulo%}Editar{%endblock%}
+
+{%block header%}
+   <header class="header_principal">
+    </header>
+{%endblock%}
+
+{%block main%}
+<section class="seccion_form">
+    <h2>Editar Datos</h2>
+    <form class="formulario" action="{% url 'editar' mat.id%}" method="POST" role="form" enctype="multipart/form-data">
+    {% csrf_token %}
+        <fieldset>
+         <legend>Llene todos los campos </legend>
+            <div class="contenedor_campo">
+                <div class="campo">
+                    <label>Matricula</label>
+                    <input value={{mat.matricula}} class="inputs_texto" type="text" name="matricula" placeholder="{{mat.matricula}}">
+                </div>
+                <div class="campo">
+                            <label for="">Nombre</label>
+                            <input value={{mat.nombre_alumno}} class="inputs_text" type="text" name="nombre_alumno" placeholder="{{mat.nombre_alumno}}">
+                        </div>
+
+                        <div class="campo">
+                            <label for="">Carrera</label>
+                            <input value={{mat.carrera}} class="inputs_text" type="text" name="carrera" placeholder="{{mat.carrera}}">
+                        </div>
+
+                        <div class="campo">
+                            <label for="">Materiales a solcitar</label>
+                            <textarea value={{mat.material}} class="inputs_text" type="text" name="material" cols="30" rows="10"  placeholder="{{mat.material}}"></textarea>
+                        </div>
+                     <button type="submit" onclick="alert('Registrado correctamente')" name"enviar" class="boton">editar</button>
+    </form>
+</section>
+{% endblock %}
