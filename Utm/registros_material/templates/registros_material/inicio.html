@@ -1,0 +1,28 @@
+{% extends 'inicio/encabezado.html' %}
+{%block titulo%}Principal {%endblock%}
+
+{%block header%}
+   <header class="header_principal">
+    </header>
+{%endblock%}
+
+{%block main%}
+<h2>Informacion</h2>
+<section class="seccion_principal">
+    <div class="contenedor_card">
+        <div class="imagen"></div>
+        <div class="texto">Recuerda pedir tus materiales de trabajo</div>
+        <div class="btn_pedir1">
+        <a class="btn_pedir" href="{% url 'registrado' %}">Pedir</a>
+        </div>
+    </div>
+    <div class="contenedor_card">
+        <div class="imagen1"></div>
+        <div class="texto">Galeria</div>
+         <div class="btn_pedir2">
+        <a class="btn_ir" href="{%url 'noexiste'%}">ir a..</a>
+        </div>
+    </div>
+</section>
+ 
+ {%endblock%}
